@@ -6,7 +6,7 @@ const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 
-
+require('dotenv').config();
 
 const app = express();
 
@@ -33,6 +33,8 @@ mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
   }).catch(function(error) {
     console.error('Error connecting to MongoDB:', error);
   });
+
+  
 
   const itemsSchema = new mongoose.Schema({
     name: String
